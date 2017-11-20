@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personenanzeige</title>
+    <link rel="import" href="PersonView.html">
+</head>
+
+<body>
+<div id="container">
+    <script>
+        var link = document.querySelector('link[rel="import"]');
+        var content = link.import;
+        var el = content.getElementById('personModel');
+
+        document.body.appendChild(el.cloneNode(true));
+    </script>
+
+    <script src="../js/Controller.js"></script>
+</div>
+
+</body>
+</html>
