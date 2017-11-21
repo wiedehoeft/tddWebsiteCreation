@@ -12,13 +12,17 @@ describe("Testing controller for personView", () => {
 
     it("should create disabled location textfield", () => {
 
+        // Given
         let filePath = path.join(__dirname, '../html/PersonView.html');
-
         const personViewTemplate = fs.readFileSync(filePath, "utf8");
         const dom = new JSDOM(personViewTemplate);
         let ort = dom.window.document.getElementById("personOrt");
 
-        expect(ort).not.to.be.null;
+        // When
+        controller.init(dom.window.document);
+
+        // Then
+        expect(ort.readOnly).to.be.true;
 
     });
 });
