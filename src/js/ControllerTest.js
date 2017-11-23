@@ -10,19 +10,54 @@ const path = require('path');
 
 describe("Testing controller for personView", () => {
 
-    it("should create disabled location textfield", () => {
+    let filePath = path.join(__dirname, '../html/PersonView.html');
+    let document;
+    let ort;
 
-        // Given
-        let filePath = path.join(__dirname, '../html/PersonView.html');
+    beforeEach("Init dom for testing", () => {
         const personViewTemplate = fs.readFileSync(filePath, "utf8");
         const dom = new JSDOM(personViewTemplate);
-        let ort = dom.window.document.getElementById("personOrt");
+        ort = dom.window.document.getElementById("personOrt");
+        document = dom.window.document;
+    });
+
+    it("should create disabled location textfield", () => {
 
         // When
-        controller.init(dom.window.document);
+        controller.init(document);
 
         // Then
         expect(ort.readOnly).to.be.true;
 
+    });
+
+    it("should set name value after input changed", () => {
+
+        // Given
+        controller.init(document);
+
+        // When
+        document.getElementById("personName").value = "Hugo";
+        const event = document.createEvent("KeyboardEvent");
+        event.initEvent("input", true, true);
+        document.getElementById("personName").dispatchEvent(event);
+
+        // Then
+        expect(controller.getPerson().name).to.be.equals("Hugo");
+    });
+
+    it("should set plz value after input changed", () => {
+
+        // Given
+        controller.init(document);
+
+        // When
+        document.getElementById("personPlz").value = "44135";
+        const event = document.createEvent("KeyboardEvent");
+        event.initEvent("input", true, true);
+        document.getElementById("personPlz").dispatchEvent(event);
+
+        // Then
+        expect(controller.getPerson().plz).to.be.equals("44135");
     });
 });
