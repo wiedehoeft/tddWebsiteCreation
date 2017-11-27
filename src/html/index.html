@@ -9,9 +9,9 @@
 <body>
 <div id="container">
     <script>
-        var link = document.querySelector('link[rel="import"]');
-        var content = link.import;
-        var el = content.getElementById('personModel');
+        let link = document.querySelector('link[rel="import"]');
+        let content = link.import;
+        let  el = content.getElementById('personModel');
 
         document.body.appendChild(el.cloneNode(true));
     </script>

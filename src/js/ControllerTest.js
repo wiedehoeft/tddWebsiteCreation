@@ -1,12 +1,12 @@
 "use strict";
-
+const sinon = require("sinon");
 const expect = require("chai").expect;
 const controller = require("./Controller");
 const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
+const {JSDOM} = jsdom;
 const fs = require('fs');
 const path = require('path');
-
+const locationCalculator = require("./PlzCalculator");
 
 describe("Testing controller for personView", () => {
 
@@ -59,5 +59,21 @@ describe("Testing controller for personView", () => {
 
         // Then
         expect(controller.getPerson().plz).to.be.equals("44135");
+    });
+
+    it("Should set location value after user inserted postalCode", () => {
+        // Given
+        controller.init(document);
+        const locationCalculatorStub = sinon.stub(locationCalculator, 'getLocationFor').returns("Dortmund");
+
+        // When
+        document.getElementById("personPlz").value = "44135";
+        const event = document.createEvent("KeyboardEvent");
+        event.initEvent("input", true, true);
+        document.getElementById("personPlz").dispatchEvent(event);
+
+        // Then
+        expect(controller.getPerson().ort).to.be.equals("Dortmund");
+        expect(document.getElementById("personOrt").value).to.be.equals("Dortmund")
     });
 });
