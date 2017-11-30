@@ -1,0 +1,5 @@
+1) Add second component to show personList
+2) Save persons
+3) Use webcomponents
+4) Other JS format, current is nodeJs-Javascript
+5) Style with CSS-framework
