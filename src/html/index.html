@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <title>Personenanzeige</title>
     <link rel="import" href="PersonView.html">
+    <link rel="import" href="PersonList.html">
 </head>
 
 <body>
 <div id="container">
     <script>
-        let link = document.querySelector('link[rel="import"]');
+        let link = document.querySelector('link[rel="import"][href="PersonView.html"]');
         let content = link.import;
         let  el = content.getElementById('personModel');
 
@@ -17,6 +18,8 @@
     </script>
 
     <script src="../../bundle.js"></script>
+
+    <person-list></person-list>
 </div>
 
 </body>
