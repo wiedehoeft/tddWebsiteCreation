@@ -1,9 +1,8 @@
-module.exports = {
-    initPerson: function () {
-        return {
-            name: "",
-            plz: "",
-            ort: ""
-        }
+export class PersonModel {
+
+    constructor() {
+        this.name = "";
+        this.plz = "";
+        this.ort = "";
     }
 };
