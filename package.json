@@ -5,14 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "browserify": "browserify src/js/index.js > bundle.js"
+    "browserify": "browserify src/js/index.js > bundle.js -t babelify"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-custom-element-classes": "^0.1.0",
     "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "babelify": "^8.0.0",
     "browserify": "^14.5.0",
     "chai": "^4.1.2",
     "jsdom": "^11.4.0",

@@ -9,19 +9,14 @@
 
 <body>
 <div id="container">
-    <script>
-        let link = document.querySelector('link[rel="import"][href="PersonView.html"]');
-        let content = link.import;
-        let  el = content.getElementById('personModel');
-
-        document.body.appendChild(el.cloneNode(true));
-    </script>
-
-    <script src="../../bundle.js"></script>
+    <person-view></person-view>
 
     <button type="button" id="buttonAddPerson">Add Person</button>
+
     <person-list></person-list>
 </div>
+
+<script src="../../bundle.js"></script>
 
 </body>
 </html>
