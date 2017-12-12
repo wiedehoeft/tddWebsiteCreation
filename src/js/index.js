@@ -1,4 +1,4 @@
-const controller = require("./Controller");
-const personList = require("./PersonList");
+require("./PersonList");
+require("./personView/PersonViewComponent");
 
-controller.init(window.document);
+//controller.init(window.document);
