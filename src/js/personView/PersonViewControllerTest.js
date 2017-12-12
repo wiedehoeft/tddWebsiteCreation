@@ -34,7 +34,7 @@ describe("Testing behaviour of person details view", () => {
     it("should set name value after input changed", () => {
 
         // Given
-        personViewController.initHtmlAttributes(document);
+        personViewController.initEventModel(document);
 
         // When
         document.getElementById("personName").value = "Hugo";
@@ -49,7 +49,7 @@ describe("Testing behaviour of person details view", () => {
     it("should set plz value after input changed", () => {
 
         // Given
-        personViewController.initHtmlAttributes(document);
+        personViewController.initEventModel(document);
 
         // When
         document.getElementById("personPlz").value = "44135";
@@ -63,7 +63,7 @@ describe("Testing behaviour of person details view", () => {
 
     it("Should set location value after user inserted postalCode", () => {
         // Given
-        personViewController.initHtmlAttributes(document);
+        personViewController.initEventModel(document);
         const locationCalculatorStub = sinon.stub(new PlzCalculator(), 'getLocationFor').returns("Dortmund");
 
         // When
