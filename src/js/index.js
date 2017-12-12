@@ -1,4 +1,2 @@
-require("./PersonList");
+require("./personList/PersonListComponent");
 require("./personView/PersonViewComponent");
-
-//controller.init(window.document);

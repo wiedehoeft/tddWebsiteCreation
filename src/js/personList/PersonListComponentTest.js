@@ -5,8 +5,8 @@ const jsdom = require("jsdom");
 const {JSDOM} = jsdom;
 const fs = require('fs');
 const path = require('path');
-const personList = require('./PersonList');
-let personModel = require("./PersonModel");
+const personList = require('./PersonListComponent');
+let personModel = require("../personView/PersonModel");
 
 describe("Testing behaviour of custom person list", () => {
 

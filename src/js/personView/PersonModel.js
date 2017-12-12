@@ -5,4 +5,4 @@ export class PersonModel {
         this.plz = "";
         this.ort = "";
     }
-};
+}

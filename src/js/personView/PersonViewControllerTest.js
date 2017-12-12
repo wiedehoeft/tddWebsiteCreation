@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import {JSDOM} from "jsdom";
 import {expect} from 'chai'
 import * as sinon from "sinon";
-import {PlzCalculator} from "../PlzCalculator";
+import {PlzCalculator} from "./PlzCalculator";
 
 describe("Testing behaviour of person details view", () => {
 
