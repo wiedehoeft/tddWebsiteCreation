@@ -14,7 +14,7 @@ class PersonList extends HTMLElement {
         let shadowRoot = this.attachShadow({mode: 'open'});
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
-        document.getElementById("buttonAddPerson").addEventListener("click", () => {
+        this.shadowRoot.getElementById("buttonAddPerson").addEventListener("click", () => {
             this.addPerson();
         });
     }
